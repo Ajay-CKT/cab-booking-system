@@ -13,10 +13,10 @@ const AdminDashboard = () => {
     const fetchData = async () => {
       try {
         const driverResponse = await axios.get(
-          "http://localhost:5000/api/drivers"
+          "YOUR_BACKEND_URL_" // provide the url where the response is stored 
         );
         const passengerResponse = await axios.get(
-          "http://localhost:5000/api/passengers"
+          "YOUR_BACKEND_URL_" // provide the url where the response is stored 
         );
         setDrivers(driverResponse.data);
         setPassengers(passengerResponse.data);
@@ -33,7 +33,7 @@ const AdminDashboard = () => {
   // Delete a user (driver or passenger)
   const deleteUser = async (id, type) => {
     try {
-      await axios.delete(`http://localhost:5000/api/${type}/${id}`);
+      await axios.delete(`YOUR_BACKEND_URL_${type}/${id}`); // provide the url where the response is stored 
       if (type === "drivers") {
         setDrivers(drivers.filter((driver) => driver._id !== id));
       } else {
@@ -70,7 +70,6 @@ const AdminDashboard = () => {
                   <th className="px-4 py-2">Name</th>
                   <th className="px-4 py-2">Email</th>
                   <th className="px-4 py-2">Phone</th>
-                  {/* <th className="px-4 py-2">Vehicle Number</th> */}
                   <th className="px-4 py-2">Actions</th>
                 </tr>
               </thead>
@@ -80,7 +79,6 @@ const AdminDashboard = () => {
                     <td className="px-4 py-2">{driver.name}</td>
                     <td className="px-4 py-2">{driver.email}</td>
                     <td className="px-4 py-2">{driver.phone}</td>
-                    {/* <td className="px-4 py-2">{driver.vehicleNumber}</td> */}
                     <td className="px-4 py-2">
                       <button
                         className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-700  mr-2"
