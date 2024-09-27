@@ -51,7 +51,7 @@ const UpdateProfile = () => {
 
     try {
       const res = await fetch(
-        "https://api.cloudinary.com/v1_1/dktaybbnl/image/upload",
+        "https://api.cloudinary.com/v1_1/YOUR_CLOUDINARY_ID/image/upload", //enter your cloud id for the upload
         {
           method: "POST",
           body: data,
