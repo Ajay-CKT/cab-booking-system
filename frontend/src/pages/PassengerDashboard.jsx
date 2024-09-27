@@ -25,7 +25,7 @@ const libraries = ["places"];
 
 const PassengerDashboard = () => {
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: import.meta.env.VITE_googleMapAPI,
+    googleMapsApiKey: import.meta.env.VITE_googleMapAPI, // provide the api key
     libraries,
   });
   const navigate = useNavigate();
