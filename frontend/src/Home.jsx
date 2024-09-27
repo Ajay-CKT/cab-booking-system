@@ -13,7 +13,7 @@ const libraries = ["places"];
 
 const Home = () => {
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: import.meta.env.VITE_googleMapAPI,
+    googleMapsApiKey: import.meta.env.VITE_googleMapAPI,  // provide the api key
     libraries,
   });
 
